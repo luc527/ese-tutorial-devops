@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.*;
 public class TrianguloResourceTest {
     
     @Test
-    public void testTipoTrianguloEndpoint() {
+    void testTipoTrianguloEndpoint() {
         var jsonEntrada = "{\"a\": 3, \"b\": 3, \"c\": 3}";
         given()
             .when()
@@ -27,7 +27,7 @@ public class TrianguloResourceTest {
     }
 
     @Test
-    public void testNaoFormaTriangulo() {
+    void testNaoFormaTriangulo() {
         var jsonEntrada = "{\"a\": 50, \"b\": 3, \"c\": 3}";
         given()
             .when()

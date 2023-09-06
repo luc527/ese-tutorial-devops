@@ -15,7 +15,7 @@ import io.quarkus.test.junit.QuarkusTest;
 public class TrianguloTest {
 
     @Test
-    public void deveCriarTriangulo() {
+    void deveCriarTriangulo() {
         var a = 3;
         var b = 4;
         var c = 5;
@@ -30,7 +30,7 @@ public class TrianguloTest {
     }
 
     @Test
-    public void deveProibirCriarTrianguloInvalido() {
+    void deveProibirCriarTrianguloInvalido() {
         var e = assertThrows(TrianguloInvalidoException.class, () -> {
             new Triangulo(3, 4, 50);
         });
@@ -38,19 +38,19 @@ public class TrianguloTest {
     }
 
     @Test
-    public void deveVerificarSeTrianguloEhEquilatero() {
+    void deveVerificarSeTrianguloEhEquilatero() {
         var triangulo = new Triangulo(4, 4, 4);
         assertEquals(TipoTriangulo.EQUILATERO, triangulo.tipo());
     }
 
     @Test
-    public void deveVerificarSeTrianguloEhIsosceles() {
+    void deveVerificarSeTrianguloEhIsosceles() {
         var triangulo = new Triangulo(4, 4, 5);
         assertEquals(TipoTriangulo.ISOSCELES, triangulo.tipo());
     }
 
     @Test
-    public void deveVerificarSeTrianguloEhEscaleno() {
+    void deveVerificarSeTrianguloEhEscaleno() {
         var triangulo = new Triangulo(3, 4, 5);
         assertEquals(TipoTriangulo.ESCALENO, triangulo.tipo());
     }
