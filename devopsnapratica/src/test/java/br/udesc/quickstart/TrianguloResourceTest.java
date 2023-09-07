@@ -10,8 +10,8 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 @QuarkusTest
-public class TrianguloResourceTest {
-    
+class TrianguloResourceTest {
+
     @Test
     void testTipoTrianguloEndpoint() {
         var jsonEntrada = "{\"a\": 3, \"b\": 3, \"c\": 3}";
