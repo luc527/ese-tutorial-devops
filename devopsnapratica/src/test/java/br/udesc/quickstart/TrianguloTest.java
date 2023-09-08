@@ -1,11 +1,8 @@
 package br.udesc.quickstart;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
-import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
 
@@ -69,13 +66,22 @@ class TrianguloTest {
             new Triangulo(4, 5, 4),
         };
         for (var triangulo : triangulos) {
-            assertEquals(triangulo.tipo(), TipoTriangulo.ISOSCELES);
+            assertEquals(TipoTriangulo.ISOSCELES, triangulo.tipo());
         }
     }
 
     @Test
     void deveVerificarSeTrianguloEhEscaleno() {
-        var triangulo = new Triangulo(3, 4, 5);
-        assertEquals(TipoTriangulo.ESCALENO, triangulo.tipo());
+        var triangulos = new Triangulo[]{
+            new Triangulo(3, 4, 5),
+            new Triangulo(3, 5, 4),
+            new Triangulo(4, 3, 5),
+            new Triangulo(4, 5, 3),
+            new Triangulo(5, 3, 4),
+            new Triangulo(5, 4, 3),
+        };
+        for (var triangulo : triangulos) {
+            assertEquals(TipoTriangulo.ESCALENO, triangulo.tipo());
+        }
     }
 }
