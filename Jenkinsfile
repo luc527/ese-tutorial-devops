@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+        jdk 'jdk_17'
+        maven 'Maven'
+    }
     stages {
         stage('Initialize') {
             steps {
@@ -8,7 +12,10 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Esse é um pipeline de exemplo'
+                dir('devopsnapratica') {
+                    echo 'Esse é um pipeline de exemplo'
+                    sh 'mvn install -Dquarkus.http.port=8084'
+                }
             }
         }
     }
